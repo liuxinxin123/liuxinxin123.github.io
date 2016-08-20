@@ -5,25 +5,16 @@
   
   <title>hd_study1 | Arya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是hadoop?答：google的核心算法MapReduce的一个开源实现。
-用于少量数据的并行处理。hadoop的核心包含？ 
-答：HDFS：分布式文件系统，用于分布式存储少量  数据。  MapReduce：分布式数据处理模型，本质是并行处理。
-用hadoop来做什么？答:  1、数据备份/文件归档的地方，分析用户行为。  2、数据仓库/数据挖掘。  3、搜索引擎。  4、云计算。  5">
+  <meta name="description" content="什么是hadoop?答：google的核心算法MapReduce的一个开源实现。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hd_study1">
 <meta property="og:url" content="http://yoursite.com/2016/08/18/hd-study1/index.html">
 <meta property="og:site_name" content="Arya">
-<meta property="og:description" content="什么是hadoop?答：google的核心算法MapReduce的一个开源实现。
-用于少量数据的并行处理。hadoop的核心包含？ 
-答：HDFS：分布式文件系统，用于分布式存储少量  数据。  MapReduce：分布式数据处理模型，本质是并行处理。
-用hadoop来做什么？答:  1、数据备份/文件归档的地方，分析用户行为。  2、数据仓库/数据挖掘。  3、搜索引擎。  4、云计算。  5">
-<meta property="og:updated_time" content="2016-08-20T00:48:30.601Z">
+<meta property="og:description" content="什么是hadoop?答：google的核心算法MapReduce的一个开源实现。">
+<meta property="og:updated_time" content="2016-08-20T00:55:05.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hd_study1">
-<meta name="twitter:description" content="什么是hadoop?答：google的核心算法MapReduce的一个开源实现。
-用于少量数据的并行处理。hadoop的核心包含？ 
-答：HDFS：分布式文件系统，用于分布式存储少量  数据。  MapReduce：分布式数据处理模型，本质是并行处理。
-用hadoop来做什么？答:  1、数据备份/文件归档的地方，分析用户行为。  2、数据仓库/数据挖掘。  3、搜索引擎。  4、云计算。  5">
+<meta name="twitter:description" content="什么是hadoop?答：google的核心算法MapReduce的一个开源实现。">
   
     <link rel="alternative" href="/atom.xml" title="Arya" type="application/atom+xml">
   
@@ -291,8 +282,11 @@
       
           
         <ol>
-<li>什么是hadoop?<br>答：google的核心算法MapReduce的一个开源实现。</li>
-<li>用于少量数据的并行处理。<br>hadoop的核心包含？ </li>
+<li><p>什么是hadoop?<br>答：google的核心算法MapReduce的一个开源实现。</p>
+<a id="more"></a> 
+</li>
+<li><p>用于少量数据的并行处理。<br>hadoop的核心包含？ </p>
+</li>
 <li>答：HDFS：分布式文件系统，用于分布式存储少量  数据。<br>  MapReduce：分布式数据处理模型，本质是并行处理。</li>
 <li>用hadoop来做什么？<br>答:<br>  1、数据备份/文件归档的地方，分析用户行为。<br>  2、数据仓库/数据挖掘。<br>  3、搜索引擎。<br>  4、云计算。<br>  5、研究（分布式+开源）。</li>
 <li>MapReduce如何工作？<br>MapReduce：处理大数据集的数据处理模型。<br>1）-&gt; Client提交数据到DFS，被分为多个split<br> -&gt; 通过inputformatter以key-value传给           jobTracker<br> -&gt; jobTracker分配工作给多个map       (taskTracker，工程师编写map)<br> -&gt; 在各个taskTracker上分别执行代码任务。        做到数据不动，代码动。<br>2）-&gt; taskTracker执行代码结束后，能过上下文收集起来<br>  -&gt; 传给reduce(taskTracker)<br>  -&gt; 经过排序等操作<br>  -&gt; 执行reduce方法(工程师编写)<br>  -&gt; 将结果通过outputFommater写到DFS。</li>
@@ -310,7 +304,7 @@
         <p><span>本文标题:</span><a href="/2016/08/18/hd-study1/">hd_study1</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lxinxin 的个人博客">Lxinxin</a></p>
         <p><span>发布时间:</span>2016年08月18日 - 12时57分</p>
-        <p><span>最后更新:</span>2016年08月20日 - 08时48分</p>
+        <p><span>最后更新:</span>2016年08月20日 - 08时55分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/08/18/hd-study1/" title="hd_study1">http://yoursite.com/2016/08/18/hd-study1/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/08/18/hd-study1/　　作者: Lxinxin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

@@ -275,16 +275,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ol>
-<li>什么是hadoop?<br>答：google的核心算法MapReduce的一个开源实现。</li>
-<li>用于少量数据的并行处理。<br>hadoop的核心包含？ </li>
-<li>答：HDFS：分布式文件系统，用于分布式存储少量  数据。<br>  MapReduce：分布式数据处理模型，本质是并行处理。</li>
-<li>用hadoop来做什么？<br>答:<br>  1、数据备份/文件归档的地方，分析用户行为。<br>  2、数据仓库/数据挖掘。<br>  3、搜索引擎。<br>  4、云计算。<br>  5、研究（分布式+开源）。</li>
-<li>MapReduce如何工作？<br>MapReduce：处理大数据集的数据处理模型。<br>1）-&gt; Client提交数据到DFS，被分为多个split<br> -&gt; 通过inputformatter以key-value传给           jobTracker<br> -&gt; jobTracker分配工作给多个map       (taskTracker，工程师编写map)<br> -&gt; 在各个taskTracker上分别执行代码任务。        做到数据不动，代码动。<br>2）-&gt; taskTracker执行代码结束后，能过上下文收集起来<br>  -&gt; 传给reduce(taskTracker)<br>  -&gt; 经过排序等操作<br>  -&gt; 执行reduce方法(工程师编写)<br>  -&gt; 将结果通过outputFommater写到DFS。</li>
-<li>什么是HDFS？<br>答：  Hadoop Distributed File System ：分布式文件系统<br>缺点：1）不适合低延迟数据访问 2）无法高效存储大量小文件 3）不支持多用户写入及做生意修改文件</li>
-<li>Hadoop集群的Hadoop守护进程和相关角色？<br>NameNode，DataNode，SecondaryNameNode<br>JobTracker，TaskTracker，Resourcemanager<br>NodeManager JobHistoryServer.<br>1)NameNode：运行在Master节点上 - 负责存储文件和目录所有无数据 - 管理文件块信息 - 管理块在集群中的分布情况。</li>
-</ol>
-
+              <ol>
+<li><p>什么是hadoop?<br>答：google的核心算法MapReduce的一个开源实现。</p>
+          
       
     </div>
     
@@ -293,6 +286,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/18/hd-study1/#more">大航海 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -337,17 +334,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! </p>
-<p>This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+              <p>Welcome to <a href="https://hexo.io/">Hexo</a>! </p>
+          
       
     </div>
     
@@ -356,6 +344,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/28/hello-world/#more">大航海 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
