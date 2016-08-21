@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hd_study1 | Arya</title>
+  <title>hd-study2 | Arya</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是hadoop?答：google的核心算法MapReduce的一个开源实现。">
+  <meta name="description" content="基本概念">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hd_study1">
-<meta property="og:url" content="http://yoursite.com/2016/08/18/hd-study1/index.html">
+<meta property="og:title" content="hd-study2">
+<meta property="og:url" content="http://yoursite.com/2016/08/21/hd-study2/index.html">
 <meta property="og:site_name" content="Arya">
-<meta property="og:description" content="什么是hadoop?答：google的核心算法MapReduce的一个开源实现。">
-<meta property="og:updated_time" content="2016-08-21T05:30:29.532Z">
+<meta property="og:description" content="基本概念">
+<meta property="og:updated_time" content="2016-08-21T05:57:30.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hd_study1">
-<meta name="twitter:description" content="什么是hadoop?答：google的核心算法MapReduce的一个开源实现。">
+<meta name="twitter:title" content="hd-study2">
+<meta name="twitter:description" content="基本概念">
   
     <link rel="alternative" href="/atom.xml" title="Arya" type="application/atom+xml">
   
@@ -247,11 +247,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hd-study1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-hd-study2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/18/hd-study1/" class="article-date">
-      <time datetime="2016-08-18T04:57:29.000Z" itemprop="datePublished">2016-08-18</time>
+      <a href="/2016/08/21/hd-study2/" class="article-date">
+      <time datetime="2016-08-21T05:31:30.000Z" itemprop="datePublished">2016-08-21</time>
 </a>
     </div>
   
@@ -264,7 +264,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hd_study1
+      hd-study2
     </h1>
   
 
@@ -281,34 +281,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ol>
-<li><p>什么是hadoop?<br>答：google的核心算法MapReduce的一个开源实现。</p>
-<a id="more"></a> 
-</li>
-<li><p>用于少量数据的并行处理。<br>hadoop的核心包含？ </p>
-</li>
-<li>答：HDFS：分布式文件系统，用于分布式存储少量  数据。<br>  MapReduce：分布式数据处理模型，本质是并行处理。</li>
-<li>用hadoop来做什么？<br>答:<br>  1、数据备份/文件归档的地方，分析用户行为。<br>  2、数据仓库/数据挖掘。<br>  3、搜索引擎。<br>  4、云计算。<br>  5、研究（分布式+开源）。</li>
-<li>MapReduce如何工作？<br>MapReduce：处理大数据集的数据处理模型。<br>1）-&gt; Client提交数据到DFS，被分为多个split<br> -&gt; 通过inputformatter以key-value传给           jobTracker<br> -&gt; jobTracker分配工作给多个map       (taskTracker，工程师编写map)<br> -&gt; 在各个taskTracker上分别执行代码任务。        做到数据不动，代码动。<br>2）-&gt; taskTracker执行代码结束后，能过上下文收集起来<br>  -&gt; 传给reduce(taskTracker)<br>  -&gt; 经过排序等操作<br>  -&gt; 执行reduce方法(工程师编写)<br>  -&gt; 将结果通过outputFommater写到DFS。</li>
-<li>什么是HDFS？<br>答：  Hadoop Distributed File System ：分布式文件系统<br>缺点：1）不适合低延迟数据访问 2）无法高效存储大量小文件 3）不支持多用户写入及做生意修改文件</li>
-<li>Hadoop集群的Hadoop守护进程和相关角色？<br>NameNode，DataNode，SecondaryNameNode<br>JobTracker，TaskTracker，Resourcemanager<br>NodeManager JobHistoryServer.<br>1)NameNode：运行在Master节点上 - 负责存储文件和目录所有无数据 - 管理文件块信息 - 管理块在集群中的分布情况。<br>2)DataNode：存储实际数据的Slave节点 - 定时向NameNode节点为发送本节点上块的信息。<br>3）SencondaryNameNode：定期通过Editlog合并NameNode的变化 - 使它的日志不会过大 - NameNode发生故障时做为副本使用。<br>4）JobTracker：运行在NameNode上 - 负责提交和跟踪MapReduce Job的守护程序 - 向TaskTracker分配任务。<br>5）TaskTracker：DataNode的守护进行 - 在Slave节点上负责具体任务的运行。<br>6）Resourcemanager：负责YARN上运行的资源和调试<br>7）NodeManager：可运行在Slave节点 - 负责 启动应用程序的内容，监测应用程序的资源使用情况（CPU，内存，磁盘，网络），将此报告到Resourcemanager。<br>8）JobHistoryServer：维护有关MapReduce工作中的应用终止后的信息。</li>
-<li>主动的”NameNode”，被动的”NameNode”。<br>Hadoop 2.x中：<br>主动NameNode：集群中运行的NameNode<br>被动NameNode：备用，主动NameNode失败后，被动        NameNode替换为主动NameNode。</li>
-<li>当两个客户端尝试访问HDFS的相同的文件时，会发生什么？<br>当第一个客户端连接NameNode打开文件进行写入时，NameNode授予租约的客户创建这个文件。<br>当第二个客户端尝试打开同一个文件写入时，NameNode会注意到该文件的租约已经授予给另一个客户端，并描绘第二个客户端打开请求。</li>
-<li>为什么有时候会得到一个”文件 只能被复制到0节点，而不是1”的错误。<br>NameNode没有任何可用的DataNodes。</li>
-<li><p>为什么Hadoop适用于大型数据集的应用程序，而不是具有大量的小文件的应用程序。</p>
-</li>
-<li><p>传统的关系型数据库和Hadoop之间的基本区别？<br>传统的RDBMS：用于交易系统报告和存档数据。<br>Hadoop：存储和处理分布式文件系统的少量数据的方法。<br>当寻求大数数据的一个记录时，RDMS是有益的。<br>当存储因为挼进行分析时，Hadoop将是有益的。</p>
-</li>
-<li>Hadoop中什么是speculative running?<br>如果一个节点出现运行一个任务较慢，主节点可以冗余另一个节点上执行同一个任务的另一个实例。这里，第一个完成任务的将被接受，另一个被杀死。这一过程被称为”speculative running”</li>
-<li>如果尝试访问HDFS或者其奥迪依然文件得到一个”连接被拒绝Java异常”的错误<br>可以意味着NameNode不工作了，NameNode可能是在安全模式或IP地址可能改变。</li>
-<li>HDFS块和输入分片之间的区别。<br>HDFS块：数据基本物理单元。<br>输入分片：数据的逻辑划分。</li>
-<li><p>Zookeeper在Hadoop集群中的作用。<br>Zookeeper目的：集群管理。实现Hadoop节点间的协调。有助于跨节点配置。实现可靠的消息传递。实现冗余服务，同步流程执行。</p>
-</li>
-<li><p>如何调试Hadoop代码：<br>计数器；Hadoop框架提供的Web界面。</p>
-</li>
-<li>MapReduce主要配置的参数：<br>在分布式文件系统作业的输入位置<br>在分布式文件系统作业的输出位置<br>输入格式<br>输出格式<br>包含map功能类<br>包含reduce功能类。</li>
-<li></li>
-</ol>
+        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1> <a id="more"></a> 
+<p>Hadoop存储系统由一个主Master和大量块服务器Slave构成。其两大核心内容为并行计算框架MapReduce，分布式存储系统HDFS。</p>
+<p>Master可存入文件系统的所有元数据：名称空间，访问控制文件分块信息，文件块的位置。</p>
+<p><strong>1 NameNode </strong><br>  NameNode为HDFS的Master/Slave结构中的Master。<br>主要负责HDFS文件系统的管理工作： 名称空间管理，文件　Block管理。<br>三类协议接口：<br>            ClientProtocol接口：提供给客户端，用于访问NameNode。<br>            DataNodeProtocol接口：用于DataNode向NameNode通信。<br>            NameNodeProtocol接口：用于NameNode到NameNode的通信。<br>在HDFS内部，一个文件被分成一个或多个Block，这些Block存储在DataNode集合里，NameNode负责管理 文件 Block的所有元数据信息。这些元数据信息包括：</p>
+<p>文件名-&gt;数据块的映射：保存在磁盘上进行持久化存储。<br>数据块-&gt;DataNode列表的映射：NameNode上不会保存，该列表是通过DataNode上报给NameNode建立起来的。</p>
+<p>NameNode执行文件系统的名称空间(namespace)操作：</p>
+<p>打开、关闭、重全名文件和目录 ，决定文件数据块到具体DataNode节点<br>为的映射。</p>
+<p>SecondaryNode：定时对NameNode的数据snapshots进行备份，降低NameNode崩溃之后导致数据丢失的风险。<br>从NameNode获得fsimage和edits后把两者重新合并发给NameNode。</p>
+<p><strong>2 DataNode</strong></p>
+<p>DataNode：负责存储数据组件。<br>一个Block数据块会在多个DataNode中进行冗余备份。<br>一个NameNode对于一个Block最多只包含一个备份。</p>
+<p>DataNode：存储 了数据块ID和数据块内容，以及它们的映射关系 。定时和NameNode进行通信，接受NameNode指令 。</p>
+<p>为了减轻NameNode的负担，NameNode上并不永久保存哪个DataNode上哪些数据块的信息，而是通过DataNode启动时的上报来更改NameNode上的映射表。DataNode和NameNode建立联系后，就会不断地和NameNode保持联系，反馈信息中也包含了NameNode对DataNode的一些命令，如删除数据库或者 把数据块复制到另一个DataNode。</p>
+<p>NameNode不会发起到DataNode的请求，在这个通信过程中，它们严格遵从C/S服务架构。</p>
+<p>DataNode也作为服务器接受来自客户端的访问，处理数据块读/写的请求。</p>
+<p>DataNode相互之间可以通信，执行数据块复制任务.<br>在客户端执行写操作时，DataNode之间需要相互配合，以保证写操作的一致性。</p>
+<p><strong>3 客户端</strong><br>客户端：访问HDFS的程序 ，HDFS shell命令。至少需要指定HDFS集群配置中的NameNode地址以及端口号信息，或通过配置HDFS的core-site.xml配置文件指定。可把客户端和HDFS节点服务器放在同一以机器上。</p>
+<p><strong>4 块</strong><br>文件系统中的一个很重要的概念。<br>默认64MB 。当一个文件大小小于HDFS的块时，实际存储所占的大小并不占用一个块的大小。客户端在读取HDFS上的一个文件时，以块为基本的数据单位。</p>
+<p>例如，读取操作：<br>-&gt; 首先，客户端把文件名和程序指定的字节偏移，根据固定的Block大小，转换成文件Block索引。<br>-&gt; 然后，客户端把文件名和Block索引发送给Master节点，Master节点将相应的Block标识和副本的位置信息返回给客户端，客户端用文件名和Block索引作为Key缓存这些信息。<br>-&gt; 客户端发送请求到其中的一个副本，一般会选择最近的。</p>
+<p>请求信息包含了Block的标识和字节范围 。<br>对这个Block的后续读取操作中，客户端不必再和Master节点通信了，除非缓存的元数据信息过期或文件被重新打开。<br>实际上，客户端通常会在一次请求中查询多个Block信息，Master节点的回应也可能包含了紧跟着这些请求的Block后面的Block的信息。</p>
 
       
     </div>
@@ -317,13 +308,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/08/18/hd-study1/">hd_study1</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/21/hd-study2/">hd-study2</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lxinxin 的个人博客">Lxinxin</a></p>
-        <p><span>发布时间:</span>2016年08月18日 - 12时57分</p>
-        <p><span>最后更新:</span>2016年08月21日 - 13时30分</p>
+        <p><span>发布时间:</span>2016年08月21日 - 13时31分</p>
+        <p><span>最后更新:</span>2016年08月21日 - 13时57分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/08/18/hd-study1/" title="hd_study1">http://yoursite.com/2016/08/18/hd-study1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/08/18/hd-study1/　　作者: Lxinxin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/21/hd-study2/" title="hd-study2">http://yoursite.com/2016/08/21/hd-study2/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/08/21/hd-study2/　　作者: Lxinxin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -336,18 +327,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/08/21/hd-study2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          hd-study2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/07/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2016/08/18/hd-study1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hd_study1</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -358,7 +340,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -422,7 +404,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/08/18/hd-study1/" data-title="hd_study1" data-url="http://yoursite.com/2016/08/18/hd-study1/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/21/hd-study2/" data-title="hd-study2" data-url="http://yoursite.com/2016/08/21/hd-study2/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -445,13 +427,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/21/hd-study2/" title="上一篇: hd-study2">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/07/28/hello-world/" title="下一篇: Hello World">
+            <a href="/2016/08/18/hd-study1/" title="下一篇: hd_study1">
                 <i class="fa fa-angle-right"></i>
             </a>
         
