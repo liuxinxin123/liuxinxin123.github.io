@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/21/hd-study2/index.html">
 <meta property="og:site_name" content="Arya">
 <meta property="og:description" content="基本概念">
-<meta property="og:updated_time" content="2016-08-21T05:57:30.004Z">
+<meta property="og:updated_time" content="2016-08-21T06:15:05.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hd-study2">
 <meta name="twitter:description" content="基本概念">
@@ -300,6 +300,27 @@
 <p><strong>4 块</strong><br>文件系统中的一个很重要的概念。<br>默认64MB 。当一个文件大小小于HDFS的块时，实际存储所占的大小并不占用一个块的大小。客户端在读取HDFS上的一个文件时，以块为基本的数据单位。</p>
 <p>例如，读取操作：<br>-&gt; 首先，客户端把文件名和程序指定的字节偏移，根据固定的Block大小，转换成文件Block索引。<br>-&gt; 然后，客户端把文件名和Block索引发送给Master节点，Master节点将相应的Block标识和副本的位置信息返回给客户端，客户端用文件名和Block索引作为Key缓存这些信息。<br>-&gt; 客户端发送请求到其中的一个副本，一般会选择最近的。</p>
 <p>请求信息包含了Block的标识和字节范围 。<br>对这个Block的后续读取操作中，客户端不必再和Master节点通信了，除非缓存的元数据信息过期或文件被重新打开。<br>实际上，客户端通常会在一次请求中查询多个Block信息，Master节点的回应也可能包含了紧跟着这些请求的Block后面的Block的信息。</p>
+<h1 id="HDFS的特性和目标"><a href="#HDFS的特性和目标" class="headerlink" title="HDFS的特性和目标"></a>HDFS的特性和目标</h1><p><strong>与其他分布式文件相比，特性</strong></p>
+<ol>
+<li>高度容错，可扩展性，可置性强。</li>
+<li>跨平台（Java语言开发）</li>
+<li>Rebalance（DataNode之间数据不均衡，实现数据负载均衡）</li>
+<li>Web界面（NameNode，DataNode有内置的Web服务器，方便检查集群的当前状态）</li>
+<li>机架感知（在调试任务和分配存储空间时，系统会考虑节点的物理位置，从而实现高效访问和计算。）</li>
+<li>安全模式</li>
+<li>文件权限和授权</li>
+<li>Shell命令接口</li>
+<li>升级和回滚（软件升级有异常发生的情况下，回滚到升级之前的状态。）</li>
+</ol>
+<p><strong>目标</strong></p>
+<ol>
+<li>流式数据访问</li>
+<li>移动计算比移动数据代价低</li>
+<li>大规模数据集</li>
+<li>可移植性</li>
+<li>简化一致性模型</li>
+<li>硬件错误 </li>
+</ol>
 
       
     </div>
@@ -311,7 +332,7 @@
         <p><span>本文标题:</span><a href="/2016/08/21/hd-study2/">hd-study2</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lxinxin 的个人博客">Lxinxin</a></p>
         <p><span>发布时间:</span>2016年08月21日 - 13时31分</p>
-        <p><span>最后更新:</span>2016年08月21日 - 13时57分</p>
+        <p><span>最后更新:</span>2016年08月21日 - 14时15分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/08/21/hd-study2/" title="hd-study2">http://yoursite.com/2016/08/21/hd-study2/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/08/21/hd-study2/　　作者: Lxinxin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -340,7 +361,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HDFS的特性和目标"><span class="toc-number">2.</span> <span class="toc-text">HDFS的特性和目标</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
